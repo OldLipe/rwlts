@@ -5,6 +5,7 @@ steps:
 - name: test
   image: brazildatacube/sits-r:latest
   commands:
+  - R -e 'install.packages("covr")'
   - R CMD build .
   - R CMD check *tar.gz --as-cran
 
@@ -14,7 +15,6 @@ steps:
     CODECOV_TOKEN:
       from_secret: codecov_token
   commands:
-  - R -e 'install.packages("covr")'
   - R -e 'library(covr); codecov(quiet = FALSE)'
   when:
     event:
