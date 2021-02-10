@@ -3,13 +3,13 @@ name: default
 
 steps:
 - name: test
-  image: brazildatacube/sits-r:latest
+  image: m3nin0/r-client:4.0.3
   commands:
   - R CMD build .
   - R CMD check *tar.gz --as-cran
 
 - name: coverage
-  image: brazildatacube/sits-r:latest
+  image: m3nin0/r-client:4.0.3
   environment:
     CODECOV_TOKEN:
       from_secret: codecov_token
@@ -19,12 +19,12 @@ steps:
     event:
     - push
 
-- name: discord-notify
-  image: brazildatacube/bdc-drone-discord
-  settings:
-    webhook:
-      from_secret: discord_webhook
-  when:
-    status:
-      - failure
-      - success
+# - name: discord-notify
+#   image: brazildatacube/bdc-drone-discord
+#   settings:
+#     webhook:
+#       from_secret: discord_webhook
+#   when:
+#     status:
+#       - failure
+#       - success
