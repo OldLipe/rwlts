@@ -3,13 +3,13 @@ name: default
 
 steps:
 - name: test
-  image: m3nin0/r-client:4.0.3
+  image: m3nin0/r-client:4.0.3_fix_packages
   commands:
   - R CMD build .
   - R CMD check *tar.gz --as-cran --no-manual
 
 - name: coverage
-  image: m3nin0/r-client:4.0.3
+  image: m3nin0/r-client:4.0.3_fix_packages
   environment:
     CODECOV_TOKEN:
       from_secret: codecov_token
