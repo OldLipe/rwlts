@@ -22,7 +22,6 @@ request <- function(URL, ..., query = NULL) {
   httr::content(response_obj)
 }
 
-
 #' @title Create a valid URL
 #'
 #' @name .build_url
