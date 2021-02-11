@@ -6,7 +6,7 @@ steps:
   image: m3nin0/r-client:4.0.3_fix_packages
   commands:
   - R CMD build .
-  - R CMD check *tar.gz --as-cran --no-manual
+  - R CMD check *tar.gz --as-cran
 
 - name: coverage
   image: m3nin0/r-client:4.0.3_fix_packages
