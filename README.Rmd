@@ -149,7 +149,7 @@ In addition to multiple point retrieval, the `get_trajectory` function allows mu
 get_trajectory(wlts_bdc, 
                latitude = c(-12, -11.01), 
                longitude = c(-54, -54), 
-               collections = "mapbiomas5_amazonia,terraclass_amazonia")
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"))
 ```
 
 Finally, the `get_trajectory` function, through the `start_date` and `end_date` parameters, allows you to specify the time intervals used in the trajectory. To exemplify its use, in the code below, trajectories are retrieved for the points `(-54, -12)` and `(-54, -11.01)`, from the `mapbiomas5_amazonia` and `terraclass_amazonia` collections in the time interval `[2003-01-01, 2004-01-01]`.
@@ -160,7 +160,7 @@ get_trajectory(wlts_bdc,
                longitude = c(-54, -54), 
                start_date = "2003-01-01",
                end_date = "2004-01-01",
-               collections = "mapbiomas5_amazonia,terraclass_amazonia")
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"))
 ```
 
 The `rwlts` uses the **httr** package to manage HTTP requests, allowing the use of tokens from the authorization protocols OAuth 1.0 or 2.0 as well as other configuration options. In the code below, we present an example of how to provide a parameter token on a HTTP request.
@@ -171,7 +171,7 @@ my_token <- "..."
 get_trajectory(wlts_bdc, 
                latitude = c(-12, -11.01), 
                longitude = c(-54, -54), 
-               collections = "mapbiomas5_amazonia,terraclass_amazonia",
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"),
                config = httr::add_headers("x-api-key" = my_token))
 ```
 

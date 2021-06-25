@@ -293,7 +293,7 @@ code below.
 get_trajectory(wlts_bdc, 
                latitude = c(-12, -11.01), 
                longitude = c(-54, -54), 
-               collections = "mapbiomas5_amazonia,terraclass_amazonia")
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"))
 #> $query
 #> NULL
 #> 
@@ -330,7 +330,7 @@ get_trajectory(wlts_bdc,
                longitude = c(-54, -54), 
                start_date = "2003-01-01",
                end_date = "2004-01-01",
-               collections = "mapbiomas5_amazonia,terraclass_amazonia")
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"))
 #> $query
 #> NULL
 #> 
@@ -360,7 +360,7 @@ my_token <- "..."
 get_trajectory(wlts_bdc, 
                latitude = c(-12, -11.01), 
                longitude = c(-54, -54), 
-               collections = "mapbiomas5_amazonia,terraclass_amazonia",
+               collections = c("mapbiomas5_amazonia", "terraclass_amazonia"),
                config = httr::add_headers("x-api-key" = my_token))
 ```
 
