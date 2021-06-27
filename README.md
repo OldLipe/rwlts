@@ -43,7 +43,7 @@ through files or web services. In addition, the data has different
 spatial and temporal resolutions and storage systems (raster or vector).
 
 In this context, the **W**eb **L**and **T**rajectory **S**ervice (WLTS)
-is a service that aims to facilitate the access to these vaapproach
+is a service that aims to facilitate the access to these approach
 consists of using a data model that defines a minimum set of temporal
 and spatial information to represent different sources and types of
 data, but with a focus on land use and land cover.
